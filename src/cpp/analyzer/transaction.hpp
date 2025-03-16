@@ -12,6 +12,7 @@
 // Original source code came from
 // https://gitenterprise.xilinx.com/tsiddaga/dynamic_op_dispatch/blob/main/include/transaction.hpp
 
+#if 0
 class transaction {
 
   // aie-rt facing implementation is hidden in this struct
@@ -32,6 +33,6 @@ public:
 private:
   std::shared_ptr<implementation> impl;
 };
-
+#endif
 
 #endif

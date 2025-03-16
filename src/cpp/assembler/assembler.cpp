@@ -2,13 +2,15 @@
 // Copyright (C) 2024-2025, Advanced Micro Devices, Inc. All rights reserved.
 #include "assembler.h"
 
+/*
 #include "aie2_asm_preprocessor.h"
 #include "aie2_blob_elfwriter.h"
 #include "aie2_blob_encoder.h"
 #include "aie2_blob_preprocessor.h"
-#include "aie2ps_elfwriter.h"
-#include "aie2ps_encoder.h"
-#include "aie2ps_preprocessor.h"
+*/
+#include "aie2ps/aie2ps_elfwriter.h"
+#include "aie2ps/aie2ps_encoder.h"
+#include "aie2ps/aie2ps_preprocessor.h"
 #include "elfwriter.h"
 #include "encoder.h"
 #include "preprocessor.h"
@@ -21,6 +23,7 @@ assembler::
 assembler(const elf_type type)
 {
 
+#if 0
   if (type == elf_type::aie2_dpu_blob)  {
     m_preprocessor = std::make_unique<aie2_blob_preprocessor>();
     m_enoder = std::make_unique<aie2_blob_encoder>();
@@ -41,7 +44,9 @@ assembler(const elf_type type)
     m_elfwriter = std::make_unique<aie2_blob_elf_writer>();
     m_ppi = std::make_shared<aie2_asm_preprocessor_input>();
   }
-  else if (type == elf_type::aie2ps_asm)
+  else 
+#endif  
+  if (type == elf_type::aie2ps_asm)
   {
     m_preprocessor = std::make_unique<aie2ps_preprocessor>();
     m_enoder = std::make_unique<aie2ps_encoder>();

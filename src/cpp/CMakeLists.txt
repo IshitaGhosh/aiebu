@@ -12,8 +12,8 @@ add_library(aiebu_library_objects OBJECT
   common/assembler_state.cpp
   common/utils.cpp
   elf/elfwriter.cpp
-  preprocessor/aie2/aie2_blob_preprocessor_input.cpp
-  preprocessor/aie2/aie2_asm_preprocessor_input.cpp
+  #preprocessor/aie2/aie2_blob_preprocessor_input.cpp
+  #preprocessor/aie2/aie2_asm_preprocessor_input.cpp
   preprocessor/asm/asm_parser.cpp
   ops/ops.cpp
   )
@@ -30,15 +30,15 @@ target_include_directories(aiebu_library_objects
   # The following should be spelled out in code
   ${CMAKE_CURRENT_SOURCE_DIR}/ELFIO
   ${CMAKE_CURRENT_SOURCE_DIR}/preprocessor
-  ${CMAKE_CURRENT_SOURCE_DIR}/preprocessor/aie2
+  #${CMAKE_CURRENT_SOURCE_DIR}/preprocessor/aie2
   ${CMAKE_CURRENT_SOURCE_DIR}/encoder
-  ${CMAKE_CURRENT_SOURCE_DIR}/encoder/aie2
+  #${CMAKE_CURRENT_SOURCE_DIR}/encoder/aie2
   ${CMAKE_CURRENT_SOURCE_DIR}/common
   ${CMAKE_CURRENT_SOURCE_DIR}/ops
   ${CMAKE_CURRENT_SOURCE_DIR}/analyzer
   ${CMAKE_CURRENT_SOURCE_DIR}/assembler
   ${CMAKE_CURRENT_SOURCE_DIR}/elf
-  ${CMAKE_CURRENT_SOURCE_DIR}/elf/aie2
+  #${CMAKE_CURRENT_SOURCE_DIR}/elf/aie2
   ${AIEBU_BINARY_DIR}/lib/gen
   )
 
@@ -52,7 +52,7 @@ set_target_properties(aiebu_library_objects PROPERTIES
   POSITION_INDEPENDENT_CODE ON
   )
 
-add_dependencies(aiebu_library_objects ctrlcodelib)
+#add_dependencies(aiebu_library_objects ctrlcodelib)
 
 target_sources(aiebu_library_objects
   PRIVATE
@@ -60,12 +60,14 @@ target_sources(aiebu_library_objects
   preprocessor/aie2ps/aie2ps_preprocessor_input.cpp
   preprocessor/asm/pager.cpp
   )
+
 target_include_directories(aiebu_library_objects
   PRIVATE
   ${CMAKE_CURRENT_SOURCE_DIR}/preprocessor/aie2ps
   ${CMAKE_CURRENT_SOURCE_DIR}/encoder/aie2ps
   ${CMAKE_CURRENT_SOURCE_DIR}/elf/aie2ps
   ${CMAKE_CURRENT_BINARY_DIR}
+  #${CMAKE_CURRENT_BINARY_DIR}/../../../python/
   )
 
 add_library(aiebu_static STATIC

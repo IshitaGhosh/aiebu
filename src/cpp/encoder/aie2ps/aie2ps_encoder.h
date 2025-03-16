@@ -8,7 +8,7 @@
 
 #include "encoder.h"
 #include "writer.h"
-#include "aie2ps_preprocessed_output.h"
+#include "aie2ps/aie2ps_preprocessed_output.h"
 #include "ops.h"
 #include "specification/aie2ps/isa.h"
 

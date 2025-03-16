@@ -39,9 +39,10 @@ namespace aiebu {
 
             stream << "  [" << i << "] " << psec->get_name() << "\t"
                    << psec->get_size() << std::endl;
-
+#if 0
             transaction tprint(psec->get_data(), psec->get_size());
             stream << tprint.get_txn_summary() << std::endl;
+#endif
         }
     }
 
@@ -66,8 +67,10 @@ namespace aiebu {
             stream << ";  [" << i << "] " << psec->get_name() << "\t"
                    << psec->get_size() << std::endl;
 
+#if 0
             transaction tprint(psec->get_data(), psec->get_size());
             stream << tprint.get_all_ops() << std::endl;
+#endif
         }
     }
 }

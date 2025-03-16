@@ -26,6 +26,7 @@ constexpr uint8_t MAJOR_VER = 1;
 constexpr uint8_t MINOR_VER = 0;
 }
 
+#if 0
 struct transaction::implementation {
 private:
     static constexpr unsigned int field_width = 32;
@@ -647,3 +648,5 @@ std::string transaction::get_all_ops() const
 {
     return impl->get_all_ops();
 }
+
+#endif
